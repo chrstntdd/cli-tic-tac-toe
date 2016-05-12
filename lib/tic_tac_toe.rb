@@ -15,7 +15,7 @@ def play(board)
     if won?(board)
       puts "Congratulations #{winner(board)}!"
     elsif draw?(board)
-      puts "Cat's Game!"
+      puts "Its a tie! Run the program again for another shot"
     end
   end
 end
@@ -80,7 +80,7 @@ end
 
 def won?(board)
   WIN_COMBINATIONS.detect do |winner|
-    board[winner[0]] == board[winner[1]] && 
+    board[winner[0]] == board[winner[1]] &&
     board[winner[1]] == board[winner[2]] &&
     position_taken?(board, winner[0])
   end
